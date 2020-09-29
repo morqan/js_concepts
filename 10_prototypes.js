@@ -27,3 +27,40 @@ console.log(morgan)
 console.log(morgan.__proto__)
 console.log(morgan.skin)
 console.log(morgan.legs)
+// =====
+const person = {
+    name: 'Morgan',
+    age: 27,
+    lord: function () {
+        console.log('Lord')
+    }
+}
+console.log(person,'person')
+person.lord()
+
+const person1 = new Object({
+    name: 'Anna',
+    age: 26,
+    monkey: function () {
+        console.log('I am monkey')
+    }
+})
+console.log(person1,'person1')
+person1.monkey()
+
+Object.prototype.sayHello = function () {
+    console.log('hello')
+}
+
+person.sayHello()
+person1.sayHello()
+
+const lena = Object.create(person)
+console.log(lena)
+console.log(lena.__proto__)
+lena.name = 'Elena'
+lena.age = 25
+lena.hairColor = 'Brown'
+console.log(lena)
+console.log(lena.hairColor)
+console.log(lena.__proto__)
