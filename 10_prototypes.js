@@ -64,3 +64,13 @@ lena.hairColor = 'Brown'
 console.log(lena)
 console.log(lena.hairColor)
 console.log(lena.__proto__)
+
+const arr = [1,2,3,5,8,13]
+
+Array.prototype.multBy = function (n) {
+    console.log(this,'arr = this ?')
+    return this.map(function (i) {
+        return i * n
+    })
+}
+console.log(arr.multBy(2))

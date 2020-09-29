@@ -49,3 +49,34 @@ function Cat(color) {
 }
 
 new Cat('white')
+
+
+const dog = {
+    name: 'Max',
+    age:5,
+    logInfo: function (color) {
+        console.group(`${this.name} info:`)
+        console.log(`Name is ${this.name}`)
+        console.log(`Age is ${this.age}`)
+        console.log(`Color is ${color}`)
+    }
+}
+
+dog.logInfo('white')
+
+const jane = {
+    name: 'Jane',
+    age: 4
+}
+
+dog.logInfo.bind(jane,'brown')()
+dog.logInfo.call(jane,'green')
+dog.logInfo.apply(jane,['black'])
+
+const arr = [1,2,3,5,8,13]
+function multBy(arr,n) {
+    return arr.map(function (i) {
+        return i * n
+    })
+}
+console.log(multBy(arr,2))
